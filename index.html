@@ -1,0 +1,53 @@
+<html>
+<head>
+    <style>
+        #cont {
+            background-color: rgb(177, 236, 128);
+            padding: 20px;
+            border: 2px dashed black;
+            text-align: center;
+            height: 150px;
+            width: 200px;
+            margin-top: 120px;
+            margin-left: 420px;
+            padding: 100px;
+        }
+
+        #text {
+            color: rgb(48, 48, 200);
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div id="cont">
+        <h3 id="text">Welcome</h3>
+        <button id="button">Click Me</button>
+    </div>
+    <script>
+        const button=document.getElementById('button');
+        const text=document.getElementById('text');
+        const container=document.getElementById('cont');
+        let state=true;
+        const buttext=button.textContent;
+        const textcont=text.textContent;
+        const contcolor=container.style.backgroundColor;
+        const textcolor=text.style.color;
+
+        button.addEventListener('click', () => {
+            if (state) {
+                button.textContent='Go back';
+                text.textContent='This is Thiru...';
+                container.style.backgroundColor='#e0e0e0';
+                text.style.color='red'; 
+            } else {
+                button.textContent=buttext;
+                text.textContent=textcont;
+                container.style.backgroundColor=contcolor;
+                text.style.color=textcolor; 
+            }
+            state=!state;
+        });
+    </script>
+</body>
+</html>
